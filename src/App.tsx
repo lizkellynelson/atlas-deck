@@ -134,43 +134,69 @@ function App() {
     </Slide>,
 
     // Slide 4 — Why Now
-    <ContentSlide
-      title="Why Now"
-      content={
-        <div className="space-y-8">
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
-            Five forces converging:
-          </h3>
-          <div className="space-y-4 text-lg md:text-xl text-atlas-dark-gray">
-            <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">1</span>
-              <p>Legacy media shrinking while creator ecosystem expands</p>
+    <Slide background="bg-white">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black mb-8">
+            Why Now
+          </h2>
+          <div className="space-y-8">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Five forces converging:
+            </h3>
+            <div className="space-y-4 text-lg md:text-xl text-atlas-dark-gray">
+              <div className="flex items-start gap-4">
+                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">1</span>
+                <p>Legacy media shrinking while creator ecosystem expands</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">2</span>
+                <p>AI search/agents fundamentally changing discovery</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">3</span>
+                <p>Social platforms evolving to broadcast + DM models</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">4</span>
+                <p>Trust shifting from institutions to individuals</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">5</span>
+                <p>Renewed investments in local information ecosystems</p>
+              </div>
             </div>
-            <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">2</span>
-              <p>AI search/agents fundamentally changing discovery</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">3</span>
-              <p>Social platforms evolving to broadcast + DM models</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">4</span>
-              <p>Trust shifting from institutions to individuals</p>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">5</span>
-              <p>Renewed investments in local information ecosystems</p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray pt-4">
+              <span className="font-bold text-atlas-black">Plus:</span> Creators emerging from
+              diverse backgrounds — trained journalists, educators, storytellers, curators — with no
+              shared infrastructure connecting them to communities and funders.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ x: 30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex justify-center"
+        >
+          <div className="relative">
+            <img
+              src="/Cleo Abram_Headshot1 cropped 2 (2).jpg"
+              alt="Creator Journalist"
+              className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
+            />
+            <div className="absolute -bottom-4 -right-4 bg-atlas-lime text-atlas-black px-6 py-3 rounded-xl font-display font-bold text-lg shadow-lg">
+              Creator Journalist
             </div>
           </div>
-          <p className="text-lg md:text-xl text-atlas-dark-gray pt-4">
-            <span className="font-bold text-atlas-black">Plus:</span> Creators emerging from
-            diverse backgrounds — trained journalists, educators, storytellers, curators — with no
-            shared infrastructure connecting them to communities and funders.
-          </p>
-        </div>
-      }
-    />,
+        </motion.div>
+      </div>
+    </Slide>,
 
     // Slide 4B — Emphasis
     <EmphasisSlide text="This is the moment to build the connective tissue the ecosystem has been waiting for." />,
@@ -476,6 +502,48 @@ function App() {
             </ul>
           </motion.div>
         </div>
+
+        {/* Creator Journalist Photos */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="pt-8"
+        >
+          <h3 className="text-2xl font-display font-bold text-atlas-black text-center mb-6">
+            Creator Journalists We Support
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/casey_newton.jpg"
+                alt="Creator Journalist"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/becca_farsace.jpg"
+                alt="Creator Journalist"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/hunter_harris.png"
+                alt="Creator Journalist"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="/kahlil_greene.jpg"
+                alt="Creator Journalist"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </Slide>,
 
