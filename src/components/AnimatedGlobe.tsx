@@ -16,63 +16,33 @@ const AnimatedGlobe = () => {
 
   return (
     <div className="relative w-full max-w-md mx-auto aspect-square">
-      {/* Globe SVG */}
-      <svg
-        viewBox="0 0 200 200"
-        className="w-full h-full"
+      {/* Spinning Atlas Logo */}
+      <motion.div
+        className="absolute inset-0"
+        animate={{
+          rotate: 360,
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
         style={{
           filter: 'drop-shadow(0 0 20px rgba(206, 255, 0, 0.3))',
         }}
       >
-        {/* Main circle */}
-        <motion.circle
-          cx="100"
-          cy="100"
-          r="90"
-          fill="none"
-          stroke="#000000"
-          strokeWidth="3"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: 'easeInOut' }}
+        <img
+          src="/atlas-logo-lime.svg"
+          alt="Atlas Logo"
+          className="w-full h-full"
         />
+      </motion.div>
 
-        {/* Horizontal lines (latitude) */}
-        {[-60, -30, 0, 30, 60].map((offset, i) => (
-          <motion.ellipse
-            key={`h-${i}`}
-            cx="100"
-            cy={100 + offset}
-            rx="90"
-            ry={30 - Math.abs(offset) * 0.3}
-            fill="none"
-            stroke="#313131"
-            strokeWidth="1.5"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, delay: 0.5 + i * 0.1, ease: 'easeInOut' }}
-          />
-        ))}
-
-        {/* Vertical lines (longitude) */}
-        {[0, 30, 60, 90, 120, 150].map((angle, i) => (
-          <motion.ellipse
-            key={`v-${i}`}
-            cx="100"
-            cy="100"
-            rx={90 * Math.abs(Math.cos((angle * Math.PI) / 180))}
-            ry="90"
-            fill="none"
-            stroke="#313131"
-            strokeWidth="1.5"
-            transform={`rotate(${angle} 100 100)`}
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2, delay: 0.5 + i * 0.1, ease: 'easeInOut' }}
-          />
-        ))}
-
-        {/* Twinkling nodes */}
+      {/* Twinkling nodes overlay */}
+      <svg
+        viewBox="0 0 200 200"
+        className="absolute inset-0 w-full h-full pointer-events-none"
+      >
         {nodes.map((node) => {
           // Project node onto sphere surface
           const theta = (node.x / 100) * Math.PI * 2;
@@ -87,7 +57,7 @@ const AnimatedGlobe = () => {
               key={node.id}
               cx={x}
               cy={y}
-              r="2"
+              r="3"
               fill="#ceff00"
               initial={{ opacity: 0, scale: 0 }}
               animate={{
@@ -100,25 +70,28 @@ const AnimatedGlobe = () => {
                 repeat: Infinity,
                 repeatDelay: 0.5,
               }}
+              style={{
+                filter: 'blur(1px)',
+              }}
             />
           );
         })}
       </svg>
 
-      {/* Rotating animation effect */}
+      {/* Glow effect */}
       <motion.div
-        className="absolute inset-0 rounded-full"
+        className="absolute inset-0 rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle at 30% 30%, rgba(206, 255, 0, 0.1) 0%, transparent 50%)',
+            'radial-gradient(circle at 30% 30%, rgba(206, 255, 0, 0.15) 0%, transparent 50%)',
         }}
         animate={{
-          rotate: 360,
+          opacity: [0.5, 0.8, 0.5],
         }}
         transition={{
-          duration: 20,
+          duration: 3,
           repeat: Infinity,
-          ease: 'linear',
+          ease: 'easeInOut',
         }}
       />
     </div>

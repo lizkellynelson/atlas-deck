@@ -16,6 +16,11 @@ const SlidesDeck = ({ slides }: SlidesDeckProps) => {
         </div>
       </AnimatePresence>
 
+      {/* Logo watermark */}
+      <div className="fixed top-6 right-6 z-50 w-12 h-12 opacity-40 hover:opacity-100 transition-opacity">
+        <img src="/atlas-logo-lime.svg" alt="Atlas" className="w-full h-full" />
+      </div>
+
       {/* Progress indicator */}
       <div className="fixed bottom-8 left-0 right-0 flex justify-center items-center gap-4 px-8 z-50">
         <div className="flex gap-2">
