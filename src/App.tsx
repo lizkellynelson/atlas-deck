@@ -2,7 +2,6 @@ import SlidesDeck from './components/SlidesDeck';
 import AnimatedGlobe from './components/AnimatedGlobe';
 import ContentSlide from './slides/ContentSlide';
 import ListSlide from './slides/ListSlide';
-import EmphasisSlide from './slides/EmphasisSlide';
 import TwoColumnSlide from './slides/TwoColumnSlide';
 import Slide from './components/Slide';
 import { motion } from 'framer-motion';
@@ -12,13 +11,13 @@ function App() {
     // Slide 1 — Title with Bold Geometric Design
     <Slide background="bg-black">
       <div className="relative w-full h-full overflow-hidden">
-        {/* Large diagonal lime shape */}
+        {/* Large diagonal lime shape - BOLD COLOR BLOCKING */}
         <motion.div
-          initial={{ x: -1000 }}
+          initial={{ x: 1200 }}
           animate={{ x: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-[120%] h-full bg-atlas-lime origin-top-right"
-          style={{ clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 40% 100%)' }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute top-0 right-0 w-[50%] h-full bg-atlas-lime"
+          style={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
         />
 
         {/* Animated Globe - smaller and positioned */}
@@ -178,7 +177,7 @@ function App() {
           <p className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white uppercase tracking-tight leading-none">
             RESULT
           </p>
-          <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-atlas-lime leading-tight text-center max-w-5xl">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-tight text-center max-w-5xl">
             The most dynamic part of journalism is invisible, unverifiable, and unsupported.
           </p>
         </motion.div>
@@ -250,63 +249,135 @@ function App() {
       </div>
     </Slide>,
 
-    // Slide 4B — Emphasis
-    <EmphasisSlide text="This is the moment to build the connective tissue the ecosystem has been waiting for." />,
+    // Slide 4B — Bold Emphasis with Visual Interest
+    <Slide background="bg-atlas-lime">
+      <div className="relative h-full overflow-hidden">
+        {/* Bold geometric black shapes */}
+        <motion.div
+          initial={{ x: -600 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+          className="absolute top-0 left-0 w-[500px] h-full bg-black opacity-15"
+          style={{ clipPath: 'polygon(0 0, 60% 0, 30% 100%, 0 100%)' }}
+        />
+        <motion.div
+          initial={{ y: 600 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
+          className="absolute bottom-0 right-0 w-96 h-96 bg-black opacity-15"
+          style={{ clipPath: 'polygon(100% 30%, 100% 100%, 30% 100%)' }}
+        />
 
-    // Slide 5 — What We're Building
-    <ContentSlide
-      title="What We're Building"
-      content={
-        <div className="space-y-8">
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
-            Four Infrastructure Pillars
-          </h3>
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative z-10 h-full flex items-center justify-center px-20"
+        >
+          <p className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-atlas-black leading-tight text-center max-w-5xl">
+            This is the moment to build{' '}
+            <span className="inline-block px-4 py-2 bg-black text-atlas-lime">
+              the connective tissue
+            </span>{' '}
+            the ecosystem has been waiting for.
+          </p>
+        </motion.div>
+      </div>
+    </Slide>,
 
-          <div className="space-y-6">
-            <div className="border-l-4 border-atlas-lime pl-6 py-2">
-              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
-                1. Standards & Frameworks
-              </h4>
-              <p className="text-lg md:text-xl text-atlas-dark-gray">
-                Transparent, creator-informed ethics and credibility standards developed with
-                Trusting News, CNTI, Pew, The Video Consortium, and creators themselves.
-              </p>
-            </div>
+    // Slide 5 — What We're Building (with geometric accent)
+    <Slide background="bg-white">
+      <div className="relative h-full overflow-hidden">
+        {/* Large lime geometric accent on right */}
+        <motion.div
+          initial={{ x: 800 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="absolute top-0 right-0 w-[400px] h-full bg-atlas-lime opacity-20"
+          style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 0% 100%)' }}
+        />
 
-            <div className="border-l-4 border-atlas-lime pl-6 py-2">
-              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
-                2. Discovery & Mapping
-              </h4>
-              <p className="text-lg md:text-xl text-atlas-dark-gray">
-                A comprehensive, verified, searchable database of creator-journalists — by beat,
-                geography, format, audience, trust indicators, business model, and more.
-              </p>
-            </div>
+        <div className="relative z-10 h-full flex flex-col justify-center px-16 py-12">
+          <motion.h2
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black mb-10"
+          >
+            What We're Building
+          </motion.h2>
 
-            <div className="border-l-4 border-atlas-lime pl-6 py-2">
-              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
-                3. Platform Intermediation
-              </h4>
-              <p className="text-lg md:text-xl text-atlas-dark-gray">
-                Systems and templates enabling creators, newsrooms, civic institutions, and
-                platforms to collaborate fairly — licensing, syndication, and partnerships without
-                exploitation.
-              </p>
-            </div>
+          <div className="space-y-8 max-w-5xl">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Four Infrastructure Pillars
+            </h3>
 
-            <div className="border-l-4 border-atlas-lime pl-6 py-2">
-              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
-                4. New Products & Marketplaces
-              </h4>
-              <p className="text-lg md:text-xl text-atlas-dark-gray">
-                Creator-centered revenue opportunities: PR distribution (with Stacker), public
-                health RFP pipelines (with Harvard Chan), B2B research and consulting marketplaces.
-              </p>
+            <div className="space-y-6">
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="border-l-4 border-atlas-lime pl-6 py-2 bg-atlas-light-gray/30 rounded-r-lg pr-6"
+              >
+                <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                  1. Standards & Frameworks
+                </h4>
+                <p className="text-lg md:text-xl text-atlas-dark-gray">
+                  Transparent, creator-informed ethics and credibility standards developed with
+                  Trusting News, CNTI, Pew, The Video Consortium, and creators themselves.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="border-l-4 border-atlas-lime pl-6 py-2 bg-atlas-light-gray/30 rounded-r-lg pr-6"
+              >
+                <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                  2. Discovery & Mapping
+                </h4>
+                <p className="text-lg md:text-xl text-atlas-dark-gray">
+                  A comprehensive, verified, searchable database of creator-journalists — by beat,
+                  geography, format, audience, trust indicators, business model, and more.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="border-l-4 border-atlas-lime pl-6 py-2 bg-atlas-light-gray/30 rounded-r-lg pr-6"
+              >
+                <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                  3. Platform Intermediation
+                </h4>
+                <p className="text-lg md:text-xl text-atlas-dark-gray">
+                  Systems and templates enabling creators, newsrooms, civic institutions, and
+                  platforms to collaborate fairly — licensing, syndication, and partnerships without
+                  exploitation.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="border-l-4 border-atlas-lime pl-6 py-2 bg-atlas-light-gray/30 rounded-r-lg pr-6"
+              >
+                <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                  4. New Products & Marketplaces
+                </h4>
+                <p className="text-lg md:text-xl text-atlas-dark-gray">
+                  Creator-centered revenue opportunities: PR distribution (with Stacker), public
+                  health RFP pipelines (with Harvard Chan), B2B research and consulting marketplaces.
+                </p>
+              </motion.div>
             </div>
           </div>
         </div>
-      }
-    />,
+      </div>
+    </Slide>,
 
     // Slide 6 — Our Traction
     <Slide background="bg-atlas-light-gray">
@@ -423,67 +494,94 @@ function App() {
       </div>
     </Slide>,
 
-    // Slide 8 — 2026 Priority
-    <ContentSlide
-      title="2026 Priority: Collaborative Database Expansion"
-      content={
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
-              Building with the Right Partners
-            </h3>
-            <p className="text-lg md:text-xl text-atlas-dark-gray">
-              <span className="font-bold text-atlas-black">Our goal:</span> Make the database as
-              expansive and useful as possible by partnering with efforts already supporting local
-              information ecosystems.
-            </p>
+    // Slide 8 — 2026 Priority (with partnership pathways on right)
+    <Slide background="bg-white">
+      <div className="h-full flex flex-col justify-center px-16 py-12">
+        <div className="grid lg:grid-cols-[1fr,350px] gap-12 items-start">
+          {/* Left column - main content */}
+          <div className="space-y-8">
+            <motion.h2
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="text-4xl md:text-5xl font-display font-bold text-atlas-black"
+            >
+              2026 Priority: Collaborative Database Expansion
+            </motion.h2>
+
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="space-y-4"
+            >
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+                Building with the Right Partners
+              </h3>
+              <p className="text-lg md:text-xl text-atlas-dark-gray">
+                <span className="font-bold text-atlas-black">Our goal:</span> Make the database as
+                expansive and useful as possible by partnering with efforts already supporting local
+                information ecosystems.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="space-y-4"
+            >
+              <h4 className="text-xl md:text-2xl font-bold text-atlas-black">
+                Early opportunities:
+              </h4>
+              <ul className="space-y-3 text-lg md:text-xl text-atlas-dark-gray pl-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span>
+                    <strong className="text-atlas-black">Chicago</strong> — National model for
+                    integrating creators into civic information ecosystems
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span>
+                    <strong className="text-atlas-black">Washington, DC</strong> — Bootstrap with our
+                    existing network and connections
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span>
+                    <strong className="text-atlas-black">Additional cities</strong> — Identifying
+                    where creator journalism layers can be mapped and empowered
+                  </span>
+                </li>
+              </ul>
+            </motion.div>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="text-xl md:text-2xl font-bold text-atlas-black">
-              Early opportunities:
-            </h4>
-            <ul className="space-y-2 text-lg md:text-xl text-atlas-dark-gray pl-6">
-              <li className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
-                <span>
-                  <strong className="text-atlas-black">Chicago</strong> — National model for
-                  integrating creators into civic information ecosystems
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
-                <span>
-                  <strong className="text-atlas-black">Washington, DC</strong> — Bootstrap with our
-                  existing network and connections
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
-                <span>
-                  <strong className="text-atlas-black">Additional cities</strong> — Identifying
-                  where creator journalism layers can be mapped and empowered
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-atlas-light-gray p-6 rounded-xl space-y-3">
-            <h4 className="text-xl font-bold text-atlas-black">Partnership pathways:</h4>
-            <div className="grid grid-cols-2 gap-3 text-base md:text-lg text-atlas-dark-gray">
-              <span>• Knight Cities programs</span>
-              <span>• Press Forward chapters</span>
-              <span>• LA Local initiatives</span>
-              <span>• New Public networks</span>
-              <span>• Beehiiv</span>
-              <span>• Substack</span>
-              <span>• YouTube</span>
-              <span>• Other civic info efforts</span>
+          {/* Right column - partnership pathways */}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="bg-atlas-lime p-8 rounded-xl space-y-4 h-fit"
+          >
+            <h4 className="text-xl font-display font-bold text-atlas-black">Partnership pathways:</h4>
+            <div className="space-y-2 text-base md:text-lg text-atlas-black">
+              <div>• Knight Cities programs</div>
+              <div>• Press Forward chapters</div>
+              <div>• LA Local initiatives</div>
+              <div>• New Public networks</div>
+              <div>• Beehiiv</div>
+              <div>• Substack</div>
+              <div>• YouTube</div>
+              <div>• Other civic info efforts</div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      }
-    />,
+      </div>
+    </Slide>,
 
     // Slide 8B — Key Question
     <Slide background="bg-atlas-dark-gray">
