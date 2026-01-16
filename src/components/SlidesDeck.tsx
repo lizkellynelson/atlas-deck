@@ -18,7 +18,7 @@ const SlidesDeck = ({ slides }: SlidesDeckProps) => {
 
       {/* Logo watermark */}
       <div className="fixed top-6 right-6 z-50 w-12 h-12 opacity-40 hover:opacity-100 transition-opacity">
-        <img src="/atlas-logo-lime.svg" alt="Atlas" className="w-full h-full" />
+        <img src="/Journalism_Atlas_icon_green_transparent.png" alt="Atlas" className="w-full h-full" />
       </div>
 
       {/* Progress indicator */}

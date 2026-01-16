@@ -32,7 +32,7 @@ const AnimatedGlobe = () => {
         }}
       >
         <img
-          src="/atlas-logo-lime.svg"
+          src="/Journalism_Atlas_icon_green_transparent.png"
           alt="Atlas Logo"
           className="w-full h-full"
         />

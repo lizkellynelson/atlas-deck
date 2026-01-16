@@ -618,9 +618,9 @@ function App() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="w-24 h-24 mx-auto mb-8"
+          className="w-48 h-48 mx-auto mb-8"
         >
-          <img src="/atlas-logo-lime.svg" alt="Atlas Logo" className="w-full h-full" />
+          <img src="/Journalism_Atlas_logo_acid_green.png" alt="Atlas Logo" className="w-full h-full object-contain" />
         </motion.div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-white">
