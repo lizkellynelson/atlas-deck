@@ -1,190 +1,655 @@
 import SlidesDeck from './components/SlidesDeck';
-import TitleSlide from './slides/TitleSlide';
+import AnimatedGlobe from './components/AnimatedGlobe';
 import ContentSlide from './slides/ContentSlide';
-import StatsSlide from './slides/StatsSlide';
-import QuoteSlide from './slides/QuoteSlide';
+import ListSlide from './slides/ListSlide';
+import EmphasisSlide from './slides/EmphasisSlide';
 import TwoColumnSlide from './slides/TwoColumnSlide';
-import ImageSlide from './slides/ImageSlide';
+import Slide from './components/Slide';
+import { motion } from 'framer-motion';
 
 function App() {
   const slides = [
-    // Title Slide
-    <TitleSlide
-      title="The Independent Journalism Atlas"
-      subtitle="Mapping the future of journalism, one story at a time"
-      author="Presented by Atlas Deck"
-    />,
+    // Slide 1 — Title with Animated Globe
+    <Slide background="bg-atlas-white">
+      <div className="space-y-12">
+        <AnimatedGlobe />
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="text-center space-y-6"
+        >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-atlas-black leading-tight">
+            The Independent Journalism Atlas
+          </h1>
+          <p className="text-2xl md:text-3xl text-atlas-dark-gray font-medium">
+            Building Infrastructure for the Future of Journalism
+          </p>
+          <p className="text-lg md:text-xl text-atlas-dark-gray max-w-3xl mx-auto">
+            Discovery, standards, and fair partnerships for a more open and resilient media
+            future.
+          </p>
+        </motion.div>
+      </div>
+    </Slide>,
 
-    // Mission Statement
+    // Slide 2 — The Transformation
     <ContentSlide
-      title="Our Mission"
-      content="The Independent Journalism Atlas is dedicated to illuminating critical stories that shape our world. We believe in the power of independent journalism to hold the powerful accountable, give voice to the marginalized, and inform engaged citizens."
-      align="center"
+      title="The Transformation"
+      content={
+        <div className="space-y-8">
+          <div className="space-y-6">
+            <h3 className="text-3xl font-display font-bold text-atlas-black">
+              Journalism is evolving from institutions to individuals
+            </h3>
+            <div className="space-y-4 text-lg md:text-xl text-atlas-dark-gray">
+              <p className="font-semibold text-atlas-black">The shift is real:</p>
+              <ul className="space-y-3 pl-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>Audiences increasingly trust people over institutions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>
+                    Communities rely on independent creators for civic accountability, local
+                    reporting, cultural context, and service journalism
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>Individual creators are the atomic units generating information</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>Yet infrastructure remains built for a bygone era</span>
+                </li>
+              </ul>
+
+              <p className="font-semibold text-atlas-black pt-6">The opportunity:</p>
+              <ul className="space-y-3 pl-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>
+                    Invert the model with intention — empower creators who own their work,
+                    audience, and reputation
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>
+                    Build portable, transparent authority that travels with creators across
+                    platforms
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span>Create systems where credibility flourishes without gatekeeping</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
     />,
 
-    // Stats About Impact
-    <StatsSlide
-      title="Our Impact in 2025"
-      stats={[
+    // Slide 2B — Emphasis
+    <EmphasisSlide text="Without infrastructure, we cannot strengthen the news ecosystems our democracy needs." />,
+
+    // Slide 3 — The Problem
+    <ListSlide
+      title="The Problem"
+      items={[
+        { text: 'No directory — impossible to find them', type: 'cross' },
+        { text: 'No trust signals — difficult to verify credibility', type: 'cross' },
+        { text: 'No standards — each creator invents their own approach', type: 'cross' },
+        { text: 'No interoperability — locked into platform silos', type: 'cross' },
+        { text: 'No funder intelligence — philanthropy cannot see or assess them', type: 'cross' },
         {
-          value: '500+',
-          label: 'Stories Published',
-          description: 'Investigative pieces and features',
+          text: 'Broken partnership pathways — exploitation rather than collaboration',
+          type: 'cross',
         },
         {
-          value: '2.5M',
-          label: 'Readers Reached',
-          description: 'Across 120 countries',
-        },
-        {
-          value: '15',
-          label: 'Awards Won',
-          description: 'Including Pulitzer nomination',
+          text: 'Platform-dependent monetization — limited control over revenue',
+          type: 'cross',
         },
       ]}
     />,
 
-    // What We Cover
+    // Slide 3B — Result
+    <Slide background="bg-atlas-dark-gray">
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="text-center"
+      >
+        <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-atlas-white leading-tight">
+          Result:{' '}
+          <span className="text-atlas-lime">
+            The most dynamic part of journalism is invisible, unverifiable, and unsupported.
+          </span>
+        </p>
+      </motion.div>
+    </Slide>,
+
+    // Slide 4 — Why Now
+    <ContentSlide
+      title="Why Now"
+      content={
+        <div className="space-y-8">
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+            Five forces converging:
+          </h3>
+          <div className="space-y-4 text-lg md:text-xl text-atlas-dark-gray">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">1</span>
+              <p>Legacy media shrinking while creator ecosystem expands</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">2</span>
+              <p>AI search/agents fundamentally changing discovery</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">3</span>
+              <p>Social platforms evolving to broadcast + DM models</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">4</span>
+              <p>Trust shifting from institutions to individuals</p>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">5</span>
+              <p>Renewed investments in local information ecosystems</p>
+            </div>
+          </div>
+          <p className="text-lg md:text-xl text-atlas-dark-gray pt-4">
+            <span className="font-bold text-atlas-black">Plus:</span> Creators emerging from
+            diverse backgrounds — trained journalists, educators, storytellers, curators — with no
+            shared infrastructure connecting them to communities and funders.
+          </p>
+        </div>
+      }
+    />,
+
+    // Slide 4B — Emphasis
+    <EmphasisSlide text="This is the moment to build the connective tissue the ecosystem has been waiting for." />,
+
+    // Slide 5 — What We're Building
+    <ContentSlide
+      title="What We're Building"
+      content={
+        <div className="space-y-8">
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+            Four Infrastructure Pillars
+          </h3>
+
+          <div className="space-y-6">
+            <div className="border-l-4 border-atlas-lime pl-6 py-2">
+              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                1. Standards & Frameworks
+              </h4>
+              <p className="text-lg md:text-xl text-atlas-dark-gray">
+                Transparent, creator-informed ethics and credibility standards developed with
+                Trusting News, CNTI, Pew, The Video Consortium, and creators themselves.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-atlas-lime pl-6 py-2">
+              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                2. Discovery & Mapping
+              </h4>
+              <p className="text-lg md:text-xl text-atlas-dark-gray">
+                A comprehensive, verified, searchable database of creator-journalists — by beat,
+                geography, format, audience, trust indicators, business model, and more.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-atlas-lime pl-6 py-2">
+              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                3. Platform Intermediation
+              </h4>
+              <p className="text-lg md:text-xl text-atlas-dark-gray">
+                Systems and templates enabling creators, newsrooms, civic institutions, and
+                platforms to collaborate fairly — licensing, syndication, and partnerships without
+                exploitation.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-atlas-lime pl-6 py-2">
+              <h4 className="text-xl md:text-2xl font-bold text-atlas-black mb-2">
+                4. New Products & Marketplaces
+              </h4>
+              <p className="text-lg md:text-xl text-atlas-dark-gray">
+                Creator-centered revenue opportunities: PR distribution (with Stacker), public
+                health RFP pipelines (with Harvard Chan), B2B research and consulting marketplaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      }
+    />,
+
+    // Slide 6 — Our Traction
+    <Slide background="bg-atlas-light-gray">
+      <div className="space-y-10">
+        <motion.h2
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black"
+        >
+          Our Traction
+        </motion.h2>
+
+        <div className="grid gap-4 text-lg md:text-xl">
+          {[
+            '1,000+ verified creators mapped (growing weekly)',
+            'Top 50 US Creator-Model Journalists list published',
+            'Active partnerships: Substats, Press Forward Chicago, SmartNews, Stacker, Chicago Public Media, ICFJ, The Video Consortium',
+            '$240K Year 1 partnership revenue projected',
+            'Database launch: February 2026 (Knight Media Forum)',
+            'Advisory board: Recruitment underway',
+            'Community engagement: Project C newsletter + network',
+            'Team depth: 20+ years in journalism innovation, audience strategy, platforms, and trust frameworks',
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ x: -30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
+              className="flex items-start gap-4 bg-white p-4 rounded-lg"
+            >
+              <span className="text-atlas-lime font-bold text-xl flex-shrink-0">✓</span>
+              <span className="text-atlas-dark-gray">{item}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </Slide>,
+
+    // Slide 7 — Why Infrastructure Matters
     <TwoColumnSlide
-      title="What We Cover"
+      title="Why Infrastructure Matters"
       leftContent={
         <div className="space-y-6">
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">Climate Justice</h3>
-            <p className="text-lg text-gray-700">
-              Investigating environmental crimes and highlighting solutions from frontline
-              communities.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">
-              Corporate Accountability
-            </h3>
-            <p className="text-lg text-gray-700">
-              Exposing corruption and following the money trail in politics and business.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">Human Rights</h3>
-            <p className="text-lg text-gray-700">
-              Documenting abuses and amplifying voices fighting for justice worldwide.
-            </p>
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+            We are NOT:
+          </h3>
+          <div className="space-y-3 text-lg md:text-xl">
+            {[
+              'A newsroom',
+              'A platform',
+              'A content studio',
+              'An agency',
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <span className="text-2xl text-atlas-dark-gray font-bold">✗</span>
+                <span className="text-atlas-dark-gray">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       }
       rightContent={
         <div className="space-y-6">
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">Tech & Privacy</h3>
-            <p className="text-lg text-gray-700">
-              Investigating surveillance capitalism and digital rights in the modern age.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">Global Health</h3>
-            <p className="text-lg text-gray-700">
-              Reporting on healthcare inequity and pharmaceutical industry practices.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-display font-bold text-atlas-700">Media Literacy</h3>
-            <p className="text-lg text-gray-700">
-              Combating misinformation and teaching critical thinking in the digital age.
-            </p>
-          </div>
-        </div>
-      }
-    />,
-
-    // Testimonial
-    <QuoteSlide
-      quote="The Independent Journalism Atlas doesn't just report the news—they reveal the systems that shape our reality. Their work is essential."
-      author="Dr. Sarah Martinez"
-      role="Professor of Journalism, Columbia University"
-    />,
-
-    // Visual Impact - You can replace this URL with actual images
-    <ImageSlide
-      imageUrl="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&q=80"
-      title="Stories That Matter"
-      caption="From local communities to global movements, we bring you the stories that traditional media overlooks."
-      overlay="dark"
-    />,
-
-    // How We Work
-    <ContentSlide
-      title="How We Work"
-      content={
-        <div className="space-y-6">
-          <div className="flex items-start gap-4">
-            <div className="text-4xl font-bold text-atlas-600 flex-shrink-0">01</div>
-            <div>
-              <h3 className="text-2xl font-semibold mb-2">Deep Research</h3>
-              <p className="text-gray-600">
-                Months of investigation, fact-checking, and verification before publication.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="text-4xl font-bold text-atlas-600 flex-shrink-0">02</div>
-            <div>
-              <h3 className="text-2xl font-semibold mb-2">Community Partnership</h3>
-              <p className="text-gray-600">
-                Working directly with affected communities to tell their stories authentically.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-4">
-            <div className="text-4xl font-bold text-atlas-600 flex-shrink-0">03</div>
-            <div>
-              <h3 className="text-2xl font-semibold mb-2">Impact-Driven</h3>
-              <p className="text-gray-600">
-                Every story is designed to create real change and hold power accountable.
-              </p>
-            </div>
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+            We ARE building:
+          </h3>
+          <div className="space-y-3 text-lg md:text-xl">
+            {[
+              'Makes journalism-minded creators visible and verifiable',
+              'Establishes credibility and trust signals',
+              'Enables fair partnerships and portability',
+              'Strengthens local information ecosystems',
+              'Makes responsible funding possible',
+              'Creates interoperability across platforms',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-2xl text-atlas-lime font-bold flex-shrink-0">✓</span>
+                <span className="text-atlas-dark-gray">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       }
     />,
 
-    // Call to Action
+    // Slide 7B — Emphasis
+    <EmphasisSlide
+      text="We're building the roads. Others will drive the cars."
+      background="bg-atlas-lime"
+      textColor="text-atlas-black"
+    />,
+
+    // Slide 8 — 2026 Priority
     <ContentSlide
-      title="Join the Movement"
+      title="2026 Priority: Collaborative Database Expansion"
       content={
         <div className="space-y-8">
-          <p className="text-2xl">
-            Independent journalism needs independent support. Here's how you can help:
-          </p>
-          <div className="grid gap-6">
-            <div className="bg-atlas-50 p-6 rounded-xl">
-              <h3 className="text-2xl font-bold text-atlas-900 mb-2">Subscribe</h3>
-              <p className="text-gray-700">
-                Get our in-depth investigations delivered to your inbox.
-              </p>
-            </div>
-            <div className="bg-atlas-50 p-6 rounded-xl">
-              <h3 className="text-2xl font-bold text-atlas-900 mb-2">Support</h3>
-              <p className="text-gray-700">
-                Become a member and fund the stories that matter most.
-              </p>
-            </div>
-            <div className="bg-atlas-50 p-6 rounded-xl">
-              <h3 className="text-2xl font-bold text-atlas-900 mb-2">Share</h3>
-              <p className="text-gray-700">
-                Amplify our work by sharing stories with your network.
-              </p>
+          <div className="space-y-4">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Building with the Right Partners
+            </h3>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              <span className="font-bold text-atlas-black">Our goal:</span> Make the database as
+              expansive and useful as possible by partnering with efforts already supporting local
+              information ecosystems.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-xl md:text-2xl font-bold text-atlas-black">
+              Early opportunities:
+            </h4>
+            <ul className="space-y-2 text-lg md:text-xl text-atlas-dark-gray pl-6">
+              <li className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>
+                  <strong className="text-atlas-black">Chicago</strong> — National model for
+                  integrating creators into civic information ecosystems
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>
+                  <strong className="text-atlas-black">Washington, DC</strong> — Bootstrap with our
+                  existing network and connections
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>
+                  <strong className="text-atlas-black">Additional cities</strong> — Identifying
+                  where creator journalism layers can be mapped and empowered
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-atlas-light-gray p-6 rounded-xl space-y-3">
+            <h4 className="text-xl font-bold text-atlas-black">Partnership pathways:</h4>
+            <div className="grid grid-cols-2 gap-3 text-base md:text-lg text-atlas-dark-gray">
+              <span>• Knight Cities programs</span>
+              <span>• Press Forward chapters</span>
+              <span>• LA Local initiatives</span>
+              <span>• New Public networks</span>
+              <span>• Beehiiv</span>
+              <span>• Substack</span>
+              <span>• YouTube</span>
+              <span>• Other civic info efforts</span>
             </div>
           </div>
         </div>
       }
     />,
 
-    // Closing Slide
-    <TitleSlide
-      title="Thank You"
-      subtitle="Together, we can build a more informed and just world"
-      author="atlas-deck.org | @AtlasJournalism"
+    // Slide 8B — Key Question
+    <Slide background="bg-atlas-dark-gray">
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="text-center space-y-8"
+      >
+        <p className="text-2xl md:text-3xl font-display font-bold text-atlas-white">
+          The question we're asking:
+        </p>
+        <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-atlas-lime leading-tight max-w-4xl mx-auto">
+          Where can a functional layer of existing creator journalism be mapped, verified, and
+          integrated to strengthen local communities?
+        </p>
+      </motion.div>
+    </Slide>,
+
+    // Slide 9 — The Value We Unlock
+    <Slide background="bg-white">
+      <div className="space-y-10">
+        <motion.h2
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black"
+        >
+          The Value We Unlock
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="space-y-4 bg-atlas-light-gray p-6 rounded-xl"
+          >
+            <h3 className="text-2xl font-display font-bold text-atlas-black">For Funders</h3>
+            <ul className="space-y-2 text-lg text-atlas-dark-gray">
+              <li>• Visibility — See who's producing credible local information</li>
+              <li>• Intelligence — Data to inform investment decisions</li>
+              <li>• Standards — Tools for assessing trust and credibility</li>
+              <li>• Pathways — How to engage creators safely and ethically</li>
+              <li>• Equity — Expand journalism beyond legacy institutions</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="space-y-4 bg-atlas-light-gray p-6 rounded-xl"
+          >
+            <h3 className="text-2xl font-display font-bold text-atlas-black">For Creators</h3>
+            <ul className="space-y-2 text-lg text-atlas-dark-gray">
+              <li>• Legitimacy without gatekeeping</li>
+              <li>• Revenue pathways built for how you work</li>
+              <li>• Portability — your work and reputation travel with you</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="space-y-4 bg-atlas-light-gray p-6 rounded-xl"
+          >
+            <h3 className="text-2xl font-display font-bold text-atlas-black">
+              For Publishers & Platforms
+            </h3>
+            <ul className="space-y-2 text-lg text-atlas-dark-gray">
+              <li>• Discovery of credible creators for collaboration</li>
+              <li>• New models for reaching audiences directly</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="space-y-4 bg-atlas-light-gray p-6 rounded-xl"
+          >
+            <h3 className="text-2xl font-display font-bold text-atlas-black">
+              For Communities & Democracy
+            </h3>
+            <ul className="space-y-2 text-lg text-atlas-dark-gray">
+              <li>• Trusted voices backed by transparent credibility signals</li>
+              <li>• Accountable journalism rooted in real communities</li>
+              <li>• Pluralistic media that democracy needs to function</li>
+            </ul>
+          </motion.div>
+        </div>
+      </div>
+    </Slide>,
+
+    // Slide 10 — Financial Model
+    <ContentSlide
+      title="Financial Model & Sustainability"
+      content={
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Revenue Strategy
+            </h3>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              30% earned revenue by Year 3 — infrastructure that pays for itself while serving
+              public good
+            </p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              <span className="font-bold text-atlas-black">Year 1 partnership revenue:</span> $240K
+              (SmartNews, Stacker, CPM, ICFJ)
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-xl md:text-2xl font-bold text-atlas-black">
+              Earned revenue streams:
+            </h4>
+            <div className="grid gap-3 text-lg md:text-xl text-atlas-dark-gray">
+              <div className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>Platform API access and licensing</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>Partnership intermediation services</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>PR distribution and marketplace fees</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span>Data and research products</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-atlas-lime p-8 rounded-xl">
+            <p className="text-2xl md:text-3xl font-display font-bold text-atlas-black text-center">
+              Creator-first principle: We don't ask creators for money. Revenue comes from
+              institutions that benefit from creator infrastructure.
+            </p>
+          </div>
+        </div>
+      }
     />,
+
+    // Slide 11 — Why Us
+    <ContentSlide
+      title="Why Us"
+      content={
+        <div className="space-y-6">
+          <div className="grid gap-5 text-lg md:text-xl">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">First-mover advantage</p>
+                <p className="text-atlas-dark-gray">
+                  We're building the infrastructure no one else is and started this work almost
+                  three years ago with Project C.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">Deep credibility</p>
+                <p className="text-atlas-dark-gray">
+                  Project C community, Top 50 list, collective connections in journalism, academia
+                  and creator worlds
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">Proven operators</p>
+                <p className="text-atlas-dark-gray">
+                  Each of us has 20+ years in journalism innovation, audience strategy, and
+                  platforms
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">Early traction</p>
+                <p className="text-atlas-dark-gray">Active partnerships generating revenue</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">Values-aligned approach</p>
+                <ul className="text-atlas-dark-gray space-y-1 pl-4">
+                  <li>• Creator-first (never extracting from creators)</li>
+                  <li>• Transparent and collaborative</li>
+                  <li>• Globally informed while honoring local context</li>
+                  <li>• Building toward creator/steward governance</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <div>
+                <p className="font-bold text-atlas-black">
+                  Clear, achievable roadmap with February 2026 launch milestone
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    />,
+
+    // Slide 12 — Call to Action
+    <Slide background="bg-atlas-black">
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-12 text-center"
+      >
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-white">
+          Let's build the next era of journalism infrastructure{' '}
+          <span className="text-atlas-lime">together</span>
+        </h2>
+
+        <div className="space-y-8 text-left max-w-3xl mx-auto">
+          <div>
+            <p className="text-2xl font-bold text-atlas-lime mb-4">We seek anchor partners for:</p>
+            <ul className="space-y-2 text-lg md:text-xl text-atlas-white">
+              <li>• Chicago pilot launch</li>
+              <li>• National database & standards development</li>
+              <li>• Multi-city expansion (Press Forward, Knight Cities)</li>
+              <li>• Global metadata & interoperability layer</li>
+              <li>• Standards development</li>
+            </ul>
+          </div>
+
+          <div className="bg-atlas-dark-gray p-6 rounded-xl space-y-3 text-atlas-white">
+            <p className="text-xl font-bold text-atlas-lime">Database launches February 2026</p>
+            <p className="text-lg">
+              <span className="font-bold">Contact:</span>
+            </p>
+            <div className="space-y-1 text-base">
+              <p>Justin Bank — justin@journalismatlas.com</p>
+              <p>Ryan Kellett — ryan@journalismatlas.com</p>
+              <p>Liz Kelly Nelson — liz@journalismatlas.com</p>
+            </div>
+            <p className="text-lg pt-4 font-bold">journalismatlas.com</p>
+          </div>
+        </div>
+
+        <p className="text-xl md:text-2xl text-atlas-lime font-display italic">
+          The Independent Journalism Atlas — Charting the path toward a more open, plural, and
+          resilient media future.
+        </p>
+      </motion.div>
+    </Slide>,
   ];
 
   return <SlidesDeck slides={slides} />;
