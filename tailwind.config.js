@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Space Grotesk', 'sans-serif'],
+        'sans': ['Merriweather', 'Georgia', 'serif'],
+        'display': ['Hanken Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
         'atlas': {
