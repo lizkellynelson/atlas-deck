@@ -276,7 +276,7 @@ function App() {
         >
           <p className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-atlas-black leading-tight text-center max-w-5xl">
             This is the moment to build{' '}
-            <span className="inline-block px-4 py-2 bg-black text-atlas-lime">
+            <span className="inline-block px-6 py-3 bg-atlas-black text-atlas-lime font-black">
               the connective tissue
             </span>{' '}
             the ecosystem has been waiting for.
@@ -887,7 +887,7 @@ function App() {
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="space-y-12 text-center"
+        className="space-y-10 text-center"
       >
         {/* Logo */}
         <motion.div
@@ -899,12 +899,17 @@ function App() {
           <img src="/Journalism_Atlas_logo_acid_green.png" alt="Atlas Logo" className="w-full h-full object-contain" />
         </motion.div>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-white">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-white px-8">
           Let's build the next era of journalism infrastructure{' '}
           <span className="text-atlas-lime">together</span>
         </h2>
 
-        <div className="space-y-8 text-left max-w-3xl mx-auto">
+        {/* Centered Database Launch Date */}
+        <p className="text-2xl md:text-3xl font-bold text-atlas-lime">
+          Database launches February 2026
+        </p>
+
+        <div className="space-y-8 text-left max-w-3xl mx-auto px-8">
           <div>
             <p className="text-2xl font-bold text-atlas-lime mb-4">We seek anchor partners for:</p>
             <ul className="space-y-2 text-lg md:text-xl text-atlas-white">
@@ -916,21 +921,19 @@ function App() {
             </ul>
           </div>
 
-          <div className="bg-atlas-dark-gray p-6 rounded-xl space-y-3 text-atlas-white">
-            <p className="text-xl font-bold text-atlas-lime">Database launches February 2026</p>
-            <p className="text-lg">
-              <span className="font-bold">Contact:</span>
-            </p>
-            <div className="space-y-1 text-base">
+          {/* Smaller Contact Info */}
+          <div className="bg-atlas-dark-gray p-6 rounded-xl space-y-2 text-atlas-white text-center">
+            <p className="text-sm font-bold text-atlas-white">Contact:</p>
+            <div className="space-y-1 text-sm">
               <p>Justin Bank — justin@journalismatlas.com</p>
               <p>Ryan Kellett — ryan@journalismatlas.com</p>
               <p>Liz Kelly Nelson — liz@journalismatlas.com</p>
             </div>
-            <p className="text-lg pt-4 font-bold">journalismatlas.com</p>
+            <p className="text-sm pt-2 font-bold">journalismatlas.com</p>
           </div>
         </div>
 
-        <p className="text-xl md:text-2xl text-atlas-lime font-display italic">
+        <p className="text-base md:text-lg text-atlas-white font-display italic px-8 max-w-4xl mx-auto">
           The Independent Journalism Atlas — Charting the path toward a more open, plural, and
           resilient media future.
         </p>
