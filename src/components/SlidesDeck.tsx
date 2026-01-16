@@ -16,11 +16,6 @@ const SlidesDeck = ({ slides }: SlidesDeckProps) => {
         </div>
       </AnimatePresence>
 
-      {/* Logo watermark */}
-      <div className="fixed top-6 right-6 z-50 w-12 h-12 opacity-40 hover:opacity-100 transition-opacity">
-        <img src="/Journalism_Atlas_icon_green_transparent.png" alt="Atlas" className="w-full h-full" />
-      </div>
-
       {/* Wordmark logo - bottom right */}
       <div className="fixed bottom-20 right-8 z-50 h-8 opacity-60 hover:opacity-100 transition-opacity">
         <img
