@@ -11,36 +11,36 @@ function App() {
     // Slide 1 — Title with Bold Geometric Design
     <Slide background="bg-black">
       <div className="relative w-full h-full overflow-hidden">
-        {/* Large diagonal lime shape - BOLD COLOR BLOCKING */}
+        {/* Large diagonal lime shape - SUPER BOLD COLOR BLOCKING */}
         <motion.div
-          initial={{ x: 1200 }}
+          initial={{ x: 1400 }}
           animate={{ x: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-0 right-0 w-[50%] h-full bg-atlas-lime"
-          style={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
+          className="absolute top-0 right-0 w-[60%] h-full bg-atlas-lime z-0"
+          style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
         />
 
-        {/* Animated Globe - smaller and positioned */}
-        <div className="absolute top-12 right-20 w-64 h-64 z-10">
+        {/* Animated Globe - positioned on lime background */}
+        <div className="absolute top-16 right-24 w-56 h-56 z-10">
           <AnimatedGlobe />
         </div>
 
         {/* Content */}
-        <div className="relative z-20 h-full flex flex-col justify-center pl-16 pr-8 max-w-6xl">
+        <div className="relative z-20 h-full flex flex-col justify-center pl-16 pr-8 max-w-5xl">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             className="space-y-8"
           >
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.95] tracking-tight max-w-3xl">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[0.95] tracking-tight max-w-3xl drop-shadow-lg">
               THE INDEPENDENT JOURNALISM ATLAS
             </h1>
             <div className="space-y-4 max-w-2xl">
-              <p className="text-2xl md:text-3xl font-display font-bold text-white">
+              <p className="text-2xl md:text-3xl font-display font-bold text-white drop-shadow-md">
                 Building Infrastructure for the Future of Journalism
               </p>
-              <p className="text-lg md:text-xl text-gray-300 font-light">
+              <p className="text-lg md:text-xl text-white font-light">
                 Discovery, standards, and fair partnerships for a more open and resilient media future.
               </p>
             </div>
@@ -603,171 +603,154 @@ function App() {
 
     // Slide 9 — The Value We Unlock (with bold geometric photo grid)
     <Slide background="bg-white">
-      <div className="relative h-full">
-        <div className="grid lg:grid-cols-[1fr,500px] gap-16 items-start h-full">
-          <div className="space-y-8 pt-8">
-            <motion.h2
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="text-4xl md:text-5xl font-display font-bold text-atlas-black"
+      <div className="relative w-full h-full flex items-center">
+        {/* Large diagonal lime background - VERY VISIBLE */}
+        <div
+          className="absolute top-0 right-0 w-[55%] h-full bg-atlas-lime z-0"
+          style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
+        />
+
+        <div className="relative z-10 w-full px-12 py-8">
+          <div className="grid lg:grid-cols-[1.2fr,1fr] gap-12 items-center max-w-7xl mx-auto">
+            {/* Left column - text content */}
+            <div className="space-y-6">
+              <motion.h2
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+                className="text-4xl md:text-5xl font-display font-bold text-atlas-black"
+              >
+                The Value We Unlock
+              </motion.h2>
+
+              <div className="grid grid-cols-2 gap-4">
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="space-y-2 bg-atlas-light-gray p-4 rounded-lg"
+                >
+                  <h3 className="text-lg font-display font-bold text-atlas-black">For Funders</h3>
+                  <ul className="space-y-1 text-sm text-atlas-dark-gray">
+                    <li>• Visibility into credible local information</li>
+                    <li>• Data to inform investments</li>
+                    <li>• Trust assessment tools</li>
+                  </ul>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="space-y-2 bg-atlas-light-gray p-4 rounded-lg"
+                >
+                  <h3 className="text-lg font-display font-bold text-atlas-black">For Creators</h3>
+                  <ul className="space-y-1 text-sm text-atlas-dark-gray">
+                    <li>• Legitimacy without gatekeeping</li>
+                    <li>• Revenue pathways</li>
+                    <li>• Portable reputation</li>
+                  </ul>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="space-y-2 bg-atlas-light-gray p-4 rounded-lg"
+                >
+                  <h3 className="text-lg font-display font-bold text-atlas-black">
+                    For Publishers & Platforms
+                  </h3>
+                  <ul className="space-y-1 text-sm text-atlas-dark-gray">
+                    <li>• Discover credible creators</li>
+                    <li>• New audience models</li>
+                  </ul>
+                </motion.div>
+
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  className="space-y-2 bg-atlas-light-gray p-4 rounded-lg"
+                >
+                  <h3 className="text-lg font-display font-bold text-atlas-black">
+                    For Communities
+                  </h3>
+                  <ul className="space-y-1 text-sm text-atlas-dark-gray">
+                    <li>• Transparent trust signals</li>
+                    <li>• Accountable journalism</li>
+                    <li>• Pluralistic media</li>
+                  </ul>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right column - photo grid */}
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="relative"
             >
-              The Value We Unlock
-            </motion.h2>
+              <div className="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
+                <a
+                  href="https://www.platformer.news/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:z-20 shadow-xl"
+                >
+                  <img
+                    src="/casey_newton.jpg"
+                    alt="Casey Newton"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                </a>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="space-y-3 bg-atlas-light-gray p-5 rounded-xl"
-              >
-                <h3 className="text-xl font-display font-bold text-atlas-black">For Funders</h3>
-                <ul className="space-y-1.5 text-base text-atlas-dark-gray">
-                  <li>• Visibility — See who's producing credible local information</li>
-                  <li>• Intelligence — Data to inform investment decisions</li>
-                  <li>• Standards — Tools for assessing trust and credibility</li>
-                  <li>• Pathways — How to engage creators safely and ethically</li>
-                  <li>• Equity — Expand journalism beyond legacy institutions</li>
-                </ul>
-              </motion.div>
+                <a
+                  href="https://www.youtube.com/BeccaFarsace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:z-20 shadow-xl"
+                >
+                  <img
+                    src="/becca_farsace.jpg"
+                    alt="Becca Farsace"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                </a>
 
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="space-y-3 bg-atlas-light-gray p-5 rounded-xl"
-              >
-                <h3 className="text-xl font-display font-bold text-atlas-black">For Creators</h3>
-                <ul className="space-y-1.5 text-base text-atlas-dark-gray">
-                  <li>• Legitimacy without gatekeeping</li>
-                  <li>• Revenue pathways built for how you work</li>
-                  <li>• Portability — your work and reputation travel with you</li>
-                </ul>
-              </motion.div>
+                <a
+                  href="https://hunterharris.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:z-20 shadow-xl"
+                >
+                  <img
+                    src="/hunter_harris.png"
+                    alt="Hunter Harris"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                </a>
 
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="space-y-3 bg-atlas-light-gray p-5 rounded-xl"
-              >
-                <h3 className="text-xl font-display font-bold text-atlas-black">
-                  For Publishers & Platforms
-                </h3>
-                <ul className="space-y-1.5 text-base text-atlas-dark-gray">
-                  <li>• Discovery of credible creators for collaboration</li>
-                  <li>• New models for reaching audiences directly</li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="space-y-3 bg-atlas-light-gray p-5 rounded-xl"
-              >
-                <h3 className="text-xl font-display font-bold text-atlas-black">
-                  For Communities & Democracy
-                </h3>
-                <ul className="space-y-1.5 text-base text-atlas-dark-gray">
-                  <li>• Trusted voices backed by transparent credibility signals</li>
-                  <li>• Accountable journalism rooted in real communities</li>
-                  <li>• Pluralistic media that democracy needs to function</li>
-                </ul>
-              </motion.div>
-            </div>
+                <a
+                  href="https://www.instagram.com/kahlil.greene/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square overflow-hidden cursor-pointer transform-all duration-500 hover:scale-105 hover:rotate-1 hover:z-20 shadow-xl"
+                >
+                  <img
+                    src="/kahlil_greene.jpg"
+                    alt="Kahlil Greene"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                </a>
+              </div>
+            </motion.div>
           </div>
-
-          {/* Bold Geometric Photo Grid - Right Side */}
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative h-full"
-          >
-            {/* Large diagonal lime background */}
-            <div
-              className="absolute inset-0 bg-atlas-lime"
-              style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
-            />
-
-            {/* Photo grid positioned over the diagonal */}
-            <div className="relative z-10 grid grid-cols-2 gap-6 p-12 h-full content-center">
-              <a
-                href="https://www.platformer.news/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-110 hover:rotate-2 hover:z-20"
-              >
-                <img
-                  src="/casey_newton.jpg"
-                  alt="Casey Newton"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                {/* Diagonal accent */}
-                <div
-                  className="absolute bottom-0 right-0 w-full h-full bg-atlas-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                  style={{ clipPath: 'polygon(100% 70%, 100% 100%, 70% 100%)' }}
-                />
-              </a>
-
-              <a
-                href="https://www.youtube.com/BeccaFarsace"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-110 hover:rotate-2 hover:z-20"
-              >
-                <img
-                  src="/becca_farsace.jpg"
-                  alt="Becca Farsace"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                <div
-                  className="absolute bottom-0 right-0 w-full h-full bg-atlas-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                  style={{ clipPath: 'polygon(100% 70%, 100% 100%, 70% 100%)' }}
-                />
-              </a>
-
-              <a
-                href="https://hunterharris.substack.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-110 hover:rotate-2 hover:z-20"
-              >
-                <img
-                  src="/hunter_harris.png"
-                  alt="Hunter Harris"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                <div
-                  className="absolute bottom-0 right-0 w-full h-full bg-atlas-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                  style={{ clipPath: 'polygon(100% 70%, 100% 100%, 70% 100%)' }}
-                />
-              </a>
-
-              <a
-                href="https://www.instagram.com/kahlil.greene/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-110 hover:rotate-2 hover:z-20"
-              >
-                <img
-                  src="/kahlil_greene.jpg"
-                  alt="Kahlil Greene"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                <div
-                  className="absolute bottom-0 right-0 w-full h-full bg-atlas-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                  style={{ clipPath: 'polygon(100% 70%, 100% 100%, 70% 100%)' }}
-                />
-              </a>
-            </div>
-          </motion.div>
         </div>
       </div>
     </Slide>,
