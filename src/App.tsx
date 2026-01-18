@@ -63,7 +63,7 @@ function App() {
               <ul className="space-y-3 pl-6">
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
-                  <span>Audiences increasingly trust people over institutions</span>
+                  <span>Audiences increasingly trust <span className="underline">people</span> over <span className="underline">institutions</span></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
@@ -78,7 +78,7 @@ function App() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
-                  <span>Yet infrastructure remains built for a bygone era</span>
+                  <span>Yet infrastructure remains anchored to a bygone past</span>
                 </li>
               </ul>
 
@@ -87,7 +87,7 @@ function App() {
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
                   <span>
-                    Invert the model with intention — empower creators who own their work,
+                    Invert the model with intention — empower creators to collectively and individually own their work,
                     audience, and reputation
                   </span>
                 </li>
@@ -136,21 +136,25 @@ function App() {
       </div>
     </Slide>,
 
-    // Slide 3 — The Problem
+    // Slide 3 — The Problems
     <ListSlide
-      title="The Problem"
+      title="The Problems"
       items={[
         { text: 'No directory — impossible to find them', type: 'cross' },
         { text: 'No trust signals — difficult to verify credibility', type: 'cross' },
-        { text: 'No standards — each creator invents their own approach', type: 'cross' },
+        { text: 'No standards — each creator applies their own approach', type: 'cross' },
         { text: 'No interoperability — locked into platform silos', type: 'cross' },
         { text: 'No funder intelligence — philanthropy cannot see or assess them', type: 'cross' },
         {
-          text: 'Broken partnership pathways — exploitation rather than collaboration',
+          text: 'Partnership uncertainty — Publishers and creators are just learning how to work together with limited models and frameworks',
           type: 'cross',
         },
         {
           text: 'Platform-dependent monetization — limited control over revenue',
+          type: 'cross',
+        },
+        {
+          text: 'No support for the profession at a social services level: Mental health, stability',
           type: 'cross',
         },
       ]}
@@ -178,7 +182,7 @@ function App() {
             RESULT
           </p>
           <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-tight text-center max-w-5xl">
-            The most dynamic part of journalism is invisible, unverifiable, and unsupported.
+            The most dynamic frontier of journalism is invisible, unverifiable, and unsupported.
           </p>
         </motion.div>
       </div>
@@ -249,6 +253,130 @@ function App() {
       </div>
     </Slide>,
 
+    // Slide 4A — Creator Ecosystem Visualization
+    <Slide background="bg-atlas-dark-gray">
+      <div className="relative h-full flex flex-col justify-center items-center px-12 py-8">
+        <motion.h2
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-8 text-center"
+        >
+          The Tension: Platform Power vs. Creator Identity
+        </motion.h2>
+
+        {/* Quadrant Chart */}
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="relative w-full max-w-5xl aspect-[4/3] bg-white rounded-xl shadow-2xl p-8"
+        >
+          {/* Y-Axis Label */}
+          <div className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90">
+            <p className="text-sm md:text-base font-display font-bold text-atlas-black whitespace-nowrap">
+              Geography / Affinity / Identity →
+            </p>
+          </div>
+
+          {/* X-Axis Label */}
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
+            <p className="text-sm md:text-base font-display font-bold text-atlas-black">
+              ← Platforms →
+            </p>
+          </div>
+
+          {/* Grid Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none p-8">
+            <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="#e5e5e5" strokeWidth="2" />
+            <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="#e5e5e5" strokeWidth="2" />
+          </svg>
+
+          {/* Scatter Plot of Creators (represented as circles) */}
+          <div className="absolute inset-0 p-12">
+            {/* Top Left Quadrant - Local/Identity focused, Few platforms */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={`tl-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
+                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
+                style={{
+                  left: `${15 + Math.random() * 20}%`,
+                  top: `${15 + Math.random() * 20}%`,
+                }}
+              />
+            ))}
+
+            {/* Top Right Quadrant - Local/Identity focused, Many platforms */}
+            {[...Array(12)].map((_, i) => (
+              <motion.div
+                key={`tr-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.6 + i * 0.04, duration: 0.3 }}
+                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
+                style={{
+                  left: `${55 + Math.random() * 30}%`,
+                  top: `${15 + Math.random() * 20}%`,
+                }}
+              />
+            ))}
+
+            {/* Bottom Left Quadrant - Platform agnostic, Few platforms */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={`bl-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.7 + i * 0.06, duration: 0.3 }}
+                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg opacity-70"
+                style={{
+                  left: `${15 + Math.random() * 20}%`,
+                  top: `${55 + Math.random() * 25}%`,
+                }}
+              />
+            ))}
+
+            {/* Bottom Right Quadrant - Platform agnostic, Many platforms */}
+            {[...Array(15)].map((_, i) => (
+              <motion.div
+                key={`br-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.8 + i * 0.03, duration: 0.3 }}
+                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
+                style={{
+                  left: `${55 + Math.random() * 30}%`,
+                  top: `${55 + Math.random() * 25}%`,
+                }}
+              />
+            ))}
+
+            {/* Platform labels */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
+              className="absolute right-8 top-1/4 text-xs md:text-sm font-bold text-atlas-dark-gray"
+            >
+              YouTube<br/>Substack<br/>Beehiiv
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <motion.p
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.3, duration: 0.6 }}
+          className="text-lg md:text-xl text-white text-center mt-6 max-w-4xl italic"
+        >
+          Each dot represents a creator journalist navigating platform choices while maintaining their identity and serving their community.
+        </motion.p>
+      </div>
+    </Slide>,
+
     // Slide 4B — Bold Emphasis with Visual Interest
     <Slide background="bg-atlas-lime">
       <div className="relative h-full overflow-hidden">
@@ -282,6 +410,109 @@ function App() {
             the ecosystem has been waiting for.
           </p>
         </motion.div>
+      </div>
+    </Slide>,
+
+    // Slide 4C — Atlas as Connective Tissue (Recent Work)
+    <Slide background="bg-white">
+      <div className="relative h-full overflow-hidden">
+        {/* Lime diagonal accent */}
+        <motion.div
+          initial={{ y: -800 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="absolute top-0 left-0 w-full h-[40%] bg-atlas-lime opacity-20"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 80%)' }}
+        />
+
+        <div className="relative z-10 h-full flex flex-col justify-center px-16 py-12">
+          <motion.h2
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black mb-10"
+          >
+            Atlas as Connective Tissue
+          </motion.h2>
+
+          <div className="space-y-8 max-w-5xl">
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-2xl md:text-3xl font-display font-bold text-atlas-black"
+            >
+              We're part of that connective tissue — and we're already building it.
+            </motion.p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="bg-atlas-light-gray p-6 rounded-xl border-l-4 border-atlas-lime"
+              >
+                <h3 className="text-xl md:text-2xl font-display font-bold text-atlas-black mb-3">
+                  Connecting Creators
+                </h3>
+                <p className="text-lg text-atlas-dark-gray">
+                  Brokering partnerships like <span className="font-bold text-atlas-black">AJ Frussi and James Del</span> — helping creator journalists find collaboration opportunities and build stronger networks.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="bg-atlas-light-gray p-6 rounded-xl border-l-4 border-atlas-lime"
+              >
+                <h3 className="text-xl md:text-2xl font-display font-bold text-atlas-black mb-3">
+                  Platform Partnerships
+                </h3>
+                <p className="text-lg text-atlas-dark-gray">
+                  Facilitating deals with <span className="font-bold text-atlas-black">SmartNews and Beehiiv</span> — creating fair partnership frameworks between platforms and independent creators.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="bg-atlas-light-gray p-6 rounded-xl border-l-4 border-atlas-lime"
+              >
+                <h3 className="text-xl md:text-2xl font-display font-bold text-atlas-black mb-3">
+                  Mediation & Standards
+                </h3>
+                <p className="text-lg text-atlas-dark-gray">
+                  Building the frameworks that make these connections possible — establishing trust signals, ethics standards, and partnership templates.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="bg-atlas-light-gray p-6 rounded-xl border-l-4 border-atlas-lime"
+              >
+                <h3 className="text-xl md:text-2xl font-display font-bold text-atlas-black mb-3">
+                  Building Momentum
+                </h3>
+                <p className="text-lg text-atlas-dark-gray">
+                  Each connection strengthens the ecosystem — proving that infrastructure-first thinking can unlock value for everyone.
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="text-xl text-atlas-dark-gray pt-4 italic"
+            >
+              This is what connective tissue looks like in practice.
+            </motion.p>
+          </div>
+        </div>
       </div>
     </Slide>,
 
@@ -452,7 +683,7 @@ function App() {
               'Enables fair partnerships and portability',
               'Strengthens local information ecosystems',
               'Makes responsible funding possible',
-              'Creates interoperability across platforms',
+              'Fosters interoperability across platforms',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <span className="text-2xl text-atlas-lime font-bold flex-shrink-0">✓</span>
@@ -765,12 +996,26 @@ function App() {
               Revenue Strategy
             </h3>
             <p className="text-lg md:text-xl text-atlas-dark-gray">
-              30% earned revenue by Year 3 — infrastructure that pays for itself while serving
-              public good
+              <span className="font-bold text-atlas-black">Our goal:</span> Infrastructure that pays for itself while serving public good
             </p>
             <p className="text-lg md:text-xl text-atlas-dark-gray">
               <span className="font-bold text-atlas-black">Year 1 partnership revenue:</span> $240K
               (SmartNews, Stacker, CPM, ICFJ)
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Fundraising Goal
+            </h3>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              Talking to partners to raise $3-5 million.
+            </p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              That would create a pathway to be 50% supported by earned revenue by Year 3.
+            </p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              It would also give us time to explore pathways towards greater commercial investment alongside community stewardship, governance and, even, ownership — something we've already begun.
             </p>
           </div>
 
