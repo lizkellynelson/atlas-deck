@@ -8,19 +8,10 @@ import { motion } from 'framer-motion';
 
 function App() {
   const slides = [
-    // Slide 1 — Title with Bold Geometric Design
+    // Slide 1 — Title with Bold Design
     <Slide background="bg-black">
       <div className="relative w-full h-full overflow-hidden">
-        {/* Large diagonal lime shape - SUPER BOLD COLOR BLOCKING */}
-        <motion.div
-          initial={{ x: 1400 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-0 right-0 w-[60%] h-full bg-atlas-lime z-0"
-          style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        />
-
-        {/* Animated Globe - positioned on lime background */}
+        {/* Animated Globe - positioned top right */}
         <div className="absolute top-16 right-24 w-56 h-56 z-10">
           <AnimatedGlobe />
         </div>
@@ -197,7 +188,7 @@ function App() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-atlas-black mb-8">
-            Why Now
+            Why We're Acting Now
           </h2>
           <div className="space-y-8">
             <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
@@ -266,130 +257,6 @@ function App() {
       </div>
     </Slide>,
 
-    // Slide 4A — Creator Ecosystem Visualization
-    <Slide background="bg-atlas-dark-gray">
-      <div className="relative h-full flex flex-col justify-center items-center px-12 py-8">
-        <motion.h2
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-8 text-center"
-        >
-          The Tension: Platform Power vs. Creator Identity
-        </motion.h2>
-
-        {/* Quadrant Chart */}
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="relative w-full max-w-5xl aspect-[4/3] bg-white rounded-xl shadow-2xl p-8"
-        >
-          {/* Y-Axis Label */}
-          <div className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90">
-            <p className="text-sm md:text-base font-display font-bold text-atlas-black whitespace-nowrap">
-              Geography / Affinity / Identity →
-            </p>
-          </div>
-
-          {/* X-Axis Label */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
-            <p className="text-sm md:text-base font-display font-bold text-atlas-black">
-              ← Platforms →
-            </p>
-          </div>
-
-          {/* Grid Lines */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none p-8">
-            <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="#e5e5e5" strokeWidth="2" />
-            <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="#e5e5e5" strokeWidth="2" />
-          </svg>
-
-          {/* Scatter Plot of Creators (represented as circles) */}
-          <div className="absolute inset-0 p-12">
-            {/* Top Left Quadrant - Local/Identity focused, Few platforms */}
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={`tl-${i}`}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.5 + i * 0.05, duration: 0.3 }}
-                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
-                style={{
-                  left: `${15 + Math.random() * 20}%`,
-                  top: `${15 + Math.random() * 20}%`,
-                }}
-              />
-            ))}
-
-            {/* Top Right Quadrant - Local/Identity focused, Many platforms */}
-            {[...Array(12)].map((_, i) => (
-              <motion.div
-                key={`tr-${i}`}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.6 + i * 0.04, duration: 0.3 }}
-                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
-                style={{
-                  left: `${55 + Math.random() * 30}%`,
-                  top: `${15 + Math.random() * 20}%`,
-                }}
-              />
-            ))}
-
-            {/* Bottom Left Quadrant - Platform agnostic, Few platforms */}
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={`bl-${i}`}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.7 + i * 0.06, duration: 0.3 }}
-                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg opacity-70"
-                style={{
-                  left: `${15 + Math.random() * 20}%`,
-                  top: `${55 + Math.random() * 25}%`,
-                }}
-              />
-            ))}
-
-            {/* Bottom Right Quadrant - Platform agnostic, Many platforms */}
-            {[...Array(15)].map((_, i) => (
-              <motion.div
-                key={`br-${i}`}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.8 + i * 0.03, duration: 0.3 }}
-                className="absolute w-8 h-8 md:w-10 md:h-10 bg-atlas-lime rounded-full border-2 border-atlas-black shadow-lg"
-                style={{
-                  left: `${55 + Math.random() * 30}%`,
-                  top: `${55 + Math.random() * 25}%`,
-                }}
-              />
-            ))}
-
-            {/* Platform labels */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
-              className="absolute right-8 top-1/4 text-xs md:text-sm font-bold text-atlas-dark-gray"
-            >
-              YouTube<br/>Substack<br/>Beehiiv
-            </motion.div>
-          </div>
-        </motion.div>
-
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.6 }}
-          className="text-lg md:text-xl text-white text-center mt-6 max-w-4xl italic"
-        >
-          Each dot represents a creator journalist navigating platform choices while maintaining their identity and serving their community.
-        </motion.p>
-      </div>
-    </Slide>,
-
     // Slide 4B — Bold Emphasis with Visual Interest
     <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
@@ -408,8 +275,8 @@ function App() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative z-10 h-full flex items-center justify-center px-20"
         >
-          <p className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-atlas-black leading-tight text-center max-w-5xl">
-            What we're building at The Atlas
+          <p className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-atlas-black leading-tight text-center max-w-4xl">
+            What we're building at The&nbsp;Atlas
           </p>
         </motion.div>
       </div>
