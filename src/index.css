@@ -20,6 +20,6 @@
   }
 
   .slide-content {
-    @apply max-w-7xl w-full;
+    @apply max-w-7xl w-full mx-auto;
   }
 }

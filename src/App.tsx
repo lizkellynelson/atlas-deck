@@ -161,14 +161,14 @@ function App() {
     />,
 
     // Slide 3B — Result with Bold Typography
-    <Slide background="bg-black">
+    <Slide background="bg-atlas-lime">
       <div className="relative h-full overflow-hidden">
-        {/* Large lime geometric accent */}
+        {/* Geometric accent */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-atlas-lime opacity-20"
+          className="absolute top-0 right-0 w-[600px] h-[600px] bg-black opacity-10"
           style={{ clipPath: 'polygon(100% 0, 100% 100%, 50% 100%)' }}
         />
 
@@ -178,10 +178,10 @@ function App() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative z-10 h-full flex flex-col items-center justify-center px-16 space-y-12"
         >
-          <p className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white uppercase tracking-tight leading-none">
+          <p className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-atlas-black uppercase tracking-tight leading-none">
             RESULT
           </p>
-          <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-tight text-center max-w-5xl">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-atlas-black leading-tight text-center max-w-4xl">
             The most dynamic frontier of journalism is invisible, unverifiable, and unsupported.
           </p>
         </motion.div>
@@ -237,16 +237,29 @@ function App() {
           initial={{ x: 30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex justify-center"
+          className="flex justify-center items-center"
         >
-          <div className="relative">
-            <img
-              src="/Cleo Abram_Headshot1 cropped 2 (2).jpg"
-              alt="Creator Journalist"
-              className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
-            />
-            <div className="absolute -bottom-4 -right-4 bg-atlas-lime text-atlas-black px-6 py-3 rounded-xl font-display font-bold text-lg shadow-lg">
-              Creator Journalist
+          <div className="grid grid-cols-1 gap-6">
+            <div className="relative w-64 h-64">
+              <img
+                src="/carlos_espina.png"
+                alt="Carlos Espina"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </div>
+            <div className="relative w-64 h-64">
+              <img
+                src="/amber_sherman.png"
+                alt="Amber Sherman"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </div>
+            <div className="relative w-64 h-64">
+              <img
+                src="/marisa_kabas.png"
+                alt="Marisa Kabas"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </motion.div>
@@ -378,22 +391,15 @@ function App() {
     </Slide>,
 
     // Slide 4B — Bold Emphasis with Visual Interest
-    <Slide background="bg-atlas-lime">
+    <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Bold geometric black shapes */}
+        {/* Diagonal green and white treatment */}
         <motion.div
-          initial={{ x: -600 }}
+          initial={{ x: 800 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="absolute top-0 left-0 w-[500px] h-full bg-black opacity-15"
-          style={{ clipPath: 'polygon(0 0, 60% 0, 30% 100%, 0 100%)' }}
-        />
-        <motion.div
-          initial={{ y: 600 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-          className="absolute bottom-0 right-0 w-96 h-96 bg-black opacity-15"
-          style={{ clipPath: 'polygon(100% 30%, 100% 100%, 30% 100%)' }}
+          className="absolute top-0 right-0 w-[60%] h-full bg-atlas-lime"
+          style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
         />
 
         <motion.div
@@ -402,12 +408,8 @@ function App() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative z-10 h-full flex items-center justify-center px-20"
         >
-          <p className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-atlas-black leading-tight text-center max-w-5xl">
-            This is the moment to build{' '}
-            <span className="inline-block px-6 py-3 bg-atlas-black text-atlas-lime font-black">
-              the connective tissue
-            </span>{' '}
-            the ecosystem has been waiting for.
+          <p className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-atlas-black leading-tight text-center max-w-5xl">
+            What we're building at The Atlas
           </p>
         </motion.div>
       </div>
@@ -456,7 +458,7 @@ function App() {
                   Connecting Creators
                 </h3>
                 <p className="text-lg text-atlas-dark-gray">
-                  Brokering partnerships like <span className="font-bold text-atlas-black">AJ Frussi and James Del</span> — helping creator journalists find collaboration opportunities and build stronger networks.
+                  Brokering partnerships that help creator journalists find collaboration opportunities and build stronger networks.
                 </p>
               </motion.div>
 
@@ -470,7 +472,7 @@ function App() {
                   Platform Partnerships
                 </h3>
                 <p className="text-lg text-atlas-dark-gray">
-                  Facilitating deals with <span className="font-bold text-atlas-black">SmartNews and Beehiiv</span> — creating fair partnership frameworks between platforms and independent creators.
+                  Facilitating deals that create fair partnership frameworks between platforms and independent creators.
                 </p>
               </motion.div>
 
@@ -695,16 +697,16 @@ function App() {
       }
     />,
 
-    // Slide 7B — Bold Statement on Lime Background
-    <Slide background="bg-atlas-lime">
+    // Slide 7B — Bold Statement with White and Green Diagonal
+    <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Black geometric accents */}
+        {/* Diagonal green background */}
         <motion.div
-          initial={{ x: 1000 }}
+          initial={{ x: -800 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-96 h-full bg-black opacity-10"
-          style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)' }}
+          className="absolute top-0 left-0 w-[65%] h-full bg-atlas-lime"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)' }}
         />
 
         <motion.div
@@ -991,6 +993,13 @@ function App() {
       title="Financial Model & Sustainability"
       content={
         <div className="space-y-8">
+          <div className="bg-atlas-lime p-6 rounded-xl">
+            <p className="text-xl md:text-2xl font-display font-bold text-atlas-black text-center">
+              Creator-first principle: We don't ask creators for money. Revenue comes from
+              institutions that benefit from creator infrastructure.
+            </p>
+          </div>
+
           <div className="space-y-4">
             <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
               Revenue Strategy
@@ -1042,13 +1051,6 @@ function App() {
               </div>
             </div>
           </div>
-
-          <div className="bg-atlas-lime p-8 rounded-xl">
-            <p className="text-2xl md:text-3xl font-display font-bold text-atlas-black text-center">
-              Creator-first principle: We don't ask creators for money. Revenue comes from
-              institutions that benefit from creator infrastructure.
-            </p>
-          </div>
         </div>
       }
     />,
@@ -1086,8 +1088,7 @@ function App() {
               <div>
                 <p className="font-bold text-atlas-black">Proven operators</p>
                 <p className="text-atlas-dark-gray">
-                  Each of us has 20+ years in journalism innovation, audience strategy, and
-                  platforms
+                  Each of us has 20+ years in journalism innovation, audience strategy, platforms and entrepreneurialism
                 </p>
               </div>
             </div>
