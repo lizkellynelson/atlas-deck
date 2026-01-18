@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&display=swap');
 @import 'tailwindcss';
 
+@theme {
+  --color-atlas-black: #000000;
+  --color-atlas-white: #FFFFFF;
+  --color-atlas-light-gray: #efeff2;
+  --color-atlas-dark-gray: #313131;
+  --color-atlas-lime: #ceff00;
+  --color-atlas-lime-50: #f7ffe6;
+  --color-atlas-lime-100: #efffcc;
+}
+
 @layer base {
   body {
     @apply bg-gray-50 text-gray-900 antialiased;
