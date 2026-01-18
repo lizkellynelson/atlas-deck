@@ -8,11 +8,11 @@ interface ContentSlideProps {
 }
 
 const ContentSlide = ({ title, content, align = 'left' }: ContentSlideProps) => {
-  const alignmentClass = align === 'center' ? 'text-center mx-auto' : '';
+  const alignmentClass = align === 'center' ? 'text-center' : '';
 
   return (
     <Slide background="bg-white">
-      <div className={`space-y-8 max-w-4xl ${alignmentClass}`}>
+      <div className={`space-y-8 max-w-4xl mx-auto ${alignmentClass}`}>
         <motion.h2
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
