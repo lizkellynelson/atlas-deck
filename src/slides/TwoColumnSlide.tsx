@@ -22,7 +22,7 @@ const TwoColumnSlide = ({ title, leftContent, rightContent }: TwoColumnSlideProp
           </motion.h2>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 max-w-6xl mx-auto">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

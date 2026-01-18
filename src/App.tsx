@@ -217,7 +217,7 @@ function App() {
               </div>
             </div>
             <p className="text-lg md:text-xl text-atlas-dark-gray pt-4">
-              <span className="font-bold text-atlas-black">Plus:</span> Creators emerging from
+              <span className="font-bold text-atlas-black">Plus:</span> Creators like Carlos Eduardo Espina, Amber Sherman and Marisa Kabas emerging from
               diverse backgrounds — trained journalists, educators, storytellers, curators — with no
               shared infrastructure connecting them to communities and funders.
             </p>
@@ -231,27 +231,42 @@ function App() {
           className="flex justify-center items-center"
         >
           <div className="grid grid-cols-1 gap-6">
-            <div className="relative w-64 h-64">
+            <a
+              href="https://www.tiktok.com/@carlos_eduardo_espina?lang=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-64 h-64 block group"
+            >
               <img
                 src="/carlos_espina.png"
-                alt="Carlos Espina"
-                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                alt="Carlos Eduardo Espina"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-            <div className="relative w-64 h-64">
+            </a>
+            <a
+              href="https://www.tiktok.com/@aisforafro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-64 h-64 block group"
+            >
               <img
                 src="/amber_sherman.png"
                 alt="Amber Sherman"
-                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-            <div className="relative w-64 h-64">
+            </a>
+            <a
+              href="https://www.thehandbasket.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-64 h-64 block group"
+            >
               <img
                 src="/marisa_kabas.png"
                 alt="Marisa Kabas"
-                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
+            </a>
           </div>
         </motion.div>
       </div>
