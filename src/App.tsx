@@ -63,7 +63,7 @@ function App() {
               <ul className="space-y-3 pl-6">
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
-                  <span>Audiences increasingly trust people over institutions</span>
+                  <span>Audiences increasingly trust <span className="underline">people</span> over <span className="underline">institutions</span></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
@@ -78,7 +78,7 @@ function App() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
-                  <span>Yet infrastructure remains built for a bygone era</span>
+                  <span>Yet infrastructure remains anchored to a bygone past</span>
                 </li>
               </ul>
 
@@ -87,7 +87,7 @@ function App() {
                 <li className="flex items-start gap-3">
                   <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
                   <span>
-                    Invert the model with intention — empower creators who own their work,
+                    Invert the model with intention — empower creators to collectively and individually own their work,
                     audience, and reputation
                   </span>
                 </li>
@@ -136,21 +136,25 @@ function App() {
       </div>
     </Slide>,
 
-    // Slide 3 — The Problem
+    // Slide 3 — The Problems
     <ListSlide
-      title="The Problem"
+      title="The Problems"
       items={[
         { text: 'No directory — impossible to find them', type: 'cross' },
         { text: 'No trust signals — difficult to verify credibility', type: 'cross' },
-        { text: 'No standards — each creator invents their own approach', type: 'cross' },
+        { text: 'No standards — each creator applies their own approach', type: 'cross' },
         { text: 'No interoperability — locked into platform silos', type: 'cross' },
         { text: 'No funder intelligence — philanthropy cannot see or assess them', type: 'cross' },
         {
-          text: 'Broken partnership pathways — exploitation rather than collaboration',
+          text: 'Partnership uncertainty — Publishers and creators are just learning how to work together with limited models and frameworks',
           type: 'cross',
         },
         {
           text: 'Platform-dependent monetization — limited control over revenue',
+          type: 'cross',
+        },
+        {
+          text: 'No support for the profession at a social services level: Mental health, stability',
           type: 'cross',
         },
       ]}
@@ -178,7 +182,7 @@ function App() {
             RESULT
           </p>
           <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-tight text-center max-w-5xl">
-            The most dynamic part of journalism is invisible, unverifiable, and unsupported.
+            The most dynamic frontier of journalism is invisible, unverifiable, and unsupported.
           </p>
         </motion.div>
       </div>
@@ -452,7 +456,7 @@ function App() {
               'Enables fair partnerships and portability',
               'Strengthens local information ecosystems',
               'Makes responsible funding possible',
-              'Creates interoperability across platforms',
+              'Fosters interoperability across platforms',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <span className="text-2xl text-atlas-lime font-bold flex-shrink-0">✓</span>
@@ -765,12 +769,26 @@ function App() {
               Revenue Strategy
             </h3>
             <p className="text-lg md:text-xl text-atlas-dark-gray">
-              30% earned revenue by Year 3 — infrastructure that pays for itself while serving
-              public good
+              <span className="font-bold text-atlas-black">Our goal:</span> Infrastructure that pays for itself while serving public good
             </p>
             <p className="text-lg md:text-xl text-atlas-dark-gray">
               <span className="font-bold text-atlas-black">Year 1 partnership revenue:</span> $240K
               (SmartNews, Stacker, CPM, ICFJ)
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
+              Fundraising Goal
+            </h3>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              Talking to partners to raise $3-5 million.
+            </p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              That would create a pathway to be 50% supported by earned revenue by Year 3.
+            </p>
+            <p className="text-lg md:text-xl text-atlas-dark-gray">
+              It would also give us time to explore pathways towards greater commercial investment alongside community stewardship, governance and, even, ownership — something we've already begun.
             </p>
           </div>
 
