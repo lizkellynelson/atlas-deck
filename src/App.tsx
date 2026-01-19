@@ -29,7 +29,7 @@ function App() {
             </h1>
             <div className="space-y-4 max-w-2xl">
               <p className="text-2xl md:text-3xl font-display font-bold text-white drop-shadow-md">
-                Building Infrastructure for the Future of Journalism
+                Building Infrastructure for the Emerging Future of Journalism
               </p>
               <p className="text-lg md:text-xl text-white font-light">
                 Discovery, standards, and fair partnerships for a more open and resilient media future.
@@ -53,22 +53,22 @@ function App() {
               <p className="font-semibold text-atlas-black">The shift is real:</p>
               <ul className="space-y-3 pl-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>Audiences increasingly trust <span className="underline">people</span> over <span className="underline">institutions</span></span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>
                     Communities rely on independent creators for civic accountability, local
                     reporting, cultural context, and service journalism
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>Individual creators are the atomic units generating information</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>Yet infrastructure remains anchored to a bygone past</span>
                 </li>
               </ul>
@@ -76,21 +76,21 @@ function App() {
               <p className="font-semibold text-atlas-black pt-6">The opportunity:</p>
               <ul className="space-y-3 pl-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>
                     Invert the model with intention — empower creators to collectively and individually own their work,
                     audience, and reputation
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>
                     Build portable, transparent authority that travels with creators across
                     platforms
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 font-bold">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 font-bold">•</span>
                   <span>Create systems where credibility flourishes without gatekeeping</span>
                 </li>
               </ul>
@@ -103,15 +103,6 @@ function App() {
     // Slide 2B — Bold Emphasis with Geometric Design
     <Slide background="bg-atlas-dark-gray">
       <div className="relative h-full overflow-hidden">
-        {/* Diagonal lime accent */}
-        <motion.div
-          initial={{ x: -800, y: 800 }}
-          animate={{ x: 0, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-atlas-lime opacity-30"
-          style={{ clipPath: 'polygon(0 0, 100% 100%, 0 100%)' }}
-        />
-
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -119,9 +110,7 @@ function App() {
           className="relative z-10 h-full flex items-center justify-center px-16"
         >
           <p className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-atlas-white leading-tight text-center max-w-5xl">
-            Without infrastructure,{' '}
-            <span className="text-atlas-lime">we cannot strengthen</span>{' '}
-            the news ecosystems our democracy needs.
+            The news ecosystems is fracturing and federating. We needs to invest in new infrastructure designed to support that new reality.
           </p>
         </motion.div>
       </div>
@@ -131,7 +120,7 @@ function App() {
     <ListSlide
       title="The Problems"
       items={[
-        { text: 'No directory — impossible to find them', type: 'cross' },
+        { text: 'No directory — impossible hard to find them', type: 'cross' },
         { text: 'No trust signals — difficult to verify credibility', type: 'cross' },
         { text: 'No standards — each creator applies their own approach', type: 'cross' },
         { text: 'No interoperability — locked into platform silos', type: 'cross' },
@@ -145,7 +134,7 @@ function App() {
           type: 'cross',
         },
         {
-          text: 'No support for the profession at a social services level: Mental health, stability',
+          text: 'No support for the profession at a social services level: Health insurance, legal services, mental health, security, financial stability, etc. are all a patchwork of approaches',
           type: 'cross',
         },
       ]}
@@ -154,15 +143,6 @@ function App() {
     // Slide 3B — Result with Bold Typography
     <Slide background="bg-atlas-lime">
       <div className="relative h-full overflow-hidden">
-        {/* Geometric accent */}
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-black opacity-10"
-          style={{ clipPath: 'polygon(100% 0, 100% 100%, 50% 100%)' }}
-        />
-
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -173,7 +153,7 @@ function App() {
             RESULT
           </p>
           <p className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-atlas-black leading-tight text-center max-w-4xl">
-            The most dynamic frontier of journalism is invisible, unverifiable, and unsupported.
+            The frontier of journalism is invisible, unverifiable, and unsupported.
           </p>
         </motion.div>
       </div>
@@ -196,23 +176,23 @@ function App() {
             </h3>
             <div className="space-y-4 text-lg md:text-xl text-atlas-dark-gray">
               <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">1</span>
+                <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">1</span>
                 <p>Legacy media shrinking while creator ecosystem expands</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">2</span>
+                <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">2</span>
                 <p>AI search/agents fundamentally changing discovery</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">3</span>
+                <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">3</span>
                 <p>Social platforms evolving to broadcast + DM models</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">4</span>
+                <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">4</span>
                 <p>Trust shifting from institutions to individuals</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">5</span>
+                <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">5</span>
                 <p>Renewed investments in local information ecosystems</p>
               </div>
             </div>
@@ -275,15 +255,6 @@ function App() {
     // Slide 4B — Bold Emphasis with Visual Interest
     <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Diagonal green and white treatment */}
-        <motion.div
-          initial={{ x: 800 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-[60%] h-full bg-atlas-lime"
-          style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        />
-
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -300,15 +271,6 @@ function App() {
     // Slide 4C — Atlas as Connective Tissue (Recent Work)
     <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Lime diagonal accent */}
-        <motion.div
-          initial={{ y: -800 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute top-0 left-0 w-full h-[40%] bg-atlas-lime opacity-20"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60%, 0 80%)' }}
-        />
-
         <div className="relative z-10 h-full flex flex-col justify-center px-16 py-12">
           <motion.h2
             initial={{ y: 30, opacity: 0 }}
@@ -326,7 +288,7 @@ function App() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-2xl md:text-3xl font-display font-bold text-atlas-black"
             >
-              We're part of that connective tissue — and we're already building it.
+              We start, by listening to those doing the work, and making connections …
             </motion.p>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -403,15 +365,6 @@ function App() {
     // Slide 5 — What We're Building (with geometric accent)
     <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Large lime geometric accent on right */}
-        <motion.div
-          initial={{ x: 800 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute top-0 right-0 w-[400px] h-full bg-atlas-lime opacity-20"
-          style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        />
-
         <div className="relative z-10 h-full flex flex-col justify-center px-16 py-12">
           <motion.h2
             initial={{ y: 30, opacity: 0 }}
@@ -513,7 +466,7 @@ function App() {
             'Active partnerships: Substats, Press Forward Chicago, SmartNews, Stacker, Chicago Public Media, ICFJ, The Video Consortium',
             '$240K Year 1 partnership revenue projected',
             'Database launch: February 2026 (Knight Media Forum)',
-            'Advisory board: Recruitment underway',
+            'CREATOR Advisory board: Recruitment underway',
             'Community engagement: Project C newsletter + network',
             'Team depth: 20+ years in journalism innovation, audience strategy, platforms, and trust frameworks',
           ].map((item, index) => (
@@ -524,7 +477,7 @@ function App() {
               transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
               className="flex items-start gap-4 bg-white p-4 rounded-lg"
             >
-              <span className="text-atlas-lime font-bold text-xl flex-shrink-0">✓</span>
+              <span className="text-atlas-dark-green font-bold text-xl flex-shrink-0">✓</span>
               <span className="text-atlas-dark-gray">{item}</span>
             </motion.div>
           ))}
@@ -534,7 +487,7 @@ function App() {
 
     // Slide 7 — Why Infrastructure Matters
     <TwoColumnSlide
-      title="Why Infrastructure Matters"
+      title="What we mean when we say Infrastructure …"
       leftContent={
         <div className="space-y-6">
           <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
@@ -558,19 +511,19 @@ function App() {
       rightContent={
         <div className="space-y-6">
           <h3 className="text-2xl md:text-3xl font-display font-bold text-atlas-black">
-            We ARE building:
+            We ARE
           </h3>
           <div className="space-y-3 text-lg md:text-xl">
             {[
-              'Makes journalism-minded creators visible and verifiable',
-              'Establishes credibility and trust signals',
-              'Enables fair partnerships and portability',
-              'Strengthens local information ecosystems',
-              'Makes responsible funding possible',
-              'Fosters interoperability across platforms',
+              'Making journalism-minded creators visible and verifiable',
+              'Establishing credibility and trust signals',
+              'Enabling fair partnerships and portability',
+              'Strengthening local information ecosystems',
+              'Making responsible funding possible',
+              'Fostering interoperability across platforms',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
-                <span className="text-2xl text-atlas-lime font-bold flex-shrink-0">✓</span>
+                <span className="text-2xl text-atlas-dark-green font-bold flex-shrink-0">✓</span>
                 <span className="text-atlas-dark-gray">{item}</span>
               </div>
             ))}
@@ -582,15 +535,6 @@ function App() {
     // Slide 7B — Bold Statement with White and Green Diagonal
     <Slide background="bg-white">
       <div className="relative h-full overflow-hidden">
-        {/* Diagonal green background */}
-        <motion.div
-          initial={{ x: -800 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="absolute top-0 left-0 w-[65%] h-full bg-atlas-lime"
-          style={{ clipPath: 'polygon(0 0, 100% 0, 75% 100%, 0% 100%)' }}
-        />
-
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -651,21 +595,21 @@ function App() {
               </h4>
               <ul className="space-y-3 text-lg md:text-xl text-atlas-dark-gray pl-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 text-2xl">•</span>
                   <span>
                     <strong className="text-atlas-black">Chicago</strong> — National model for
                     integrating creators into civic information ecosystems
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 text-2xl">•</span>
                   <span>
                     <strong className="text-atlas-black">Washington, DC</strong> — Bootstrap with our
                     existing network and connections
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-atlas-lime flex-shrink-0 text-2xl">•</span>
+                  <span className="text-atlas-dark-green flex-shrink-0 text-2xl">•</span>
                   <span>
                     <strong className="text-atlas-black">Additional cities</strong> — Identifying
                     where creator journalism layers can be mapped and empowered
@@ -707,7 +651,7 @@ function App() {
         className="text-center space-y-8"
       >
         <p className="text-2xl md:text-3xl font-display font-bold text-atlas-white">
-          The question we're asking:
+          The question we're exploring:
         </p>
         <p className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-atlas-lime leading-tight max-w-4xl mx-auto">
           Where can a functional layer of existing creator journalism be mapped, verified, and
@@ -719,12 +663,6 @@ function App() {
     // Slide 9 — The Value We Unlock (with bold geometric photo grid)
     <Slide background="bg-white">
       <div className="relative w-full h-full flex items-center">
-        {/* Large diagonal lime background - VERY VISIBLE */}
-        <div
-          className="absolute top-0 right-0 w-[55%] h-full bg-atlas-lime z-0"
-          style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
-        />
-
         <div className="relative z-10 w-full px-12 py-8">
           <div className="grid lg:grid-cols-[1.2fr,1fr] gap-12 items-center max-w-7xl mx-auto">
             {/* Left column - text content */}
@@ -916,19 +854,19 @@ function App() {
             </h4>
             <div className="grid gap-3 text-lg md:text-xl text-atlas-dark-gray">
               <div className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span className="text-atlas-dark-green flex-shrink-0">•</span>
                 <span>Platform API access and licensing</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span className="text-atlas-dark-green flex-shrink-0">•</span>
                 <span>Partnership intermediation services</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span className="text-atlas-dark-green flex-shrink-0">•</span>
                 <span>PR distribution and marketplace fees</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-atlas-lime flex-shrink-0">•</span>
+                <span className="text-atlas-dark-green flex-shrink-0">•</span>
                 <span>Data and research products</span>
               </div>
             </div>
@@ -944,7 +882,7 @@ function App() {
         <div className="space-y-6">
           <div className="grid gap-5 text-lg md:text-xl">
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">First-mover advantage</p>
                 <p className="text-atlas-dark-gray">
@@ -955,7 +893,7 @@ function App() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">Deep credibility</p>
                 <p className="text-atlas-dark-gray">
@@ -966,7 +904,7 @@ function App() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">Proven operators</p>
                 <p className="text-atlas-dark-gray">
@@ -976,7 +914,7 @@ function App() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">Early traction</p>
                 <p className="text-atlas-dark-gray">Active partnerships generating revenue</p>
@@ -984,7 +922,7 @@ function App() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">Values-aligned approach</p>
                 <ul className="text-atlas-dark-gray space-y-1 pl-4">
@@ -997,7 +935,7 @@ function App() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-3xl font-bold text-atlas-lime flex-shrink-0">✓</span>
+              <span className="text-3xl font-bold text-atlas-dark-green flex-shrink-0">✓</span>
               <div>
                 <p className="font-bold text-atlas-black">
                   Clear, achievable roadmap with February 2026 launch milestone
