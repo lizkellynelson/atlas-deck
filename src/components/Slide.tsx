@@ -4,7 +4,7 @@ import type { SlideProps } from '../types';
 const Slide = ({ children, background = 'bg-white', className = '' }: SlideProps) => {
   return (
     <motion.div
-      className={`slide ${background} ${className}`}
+      className={`slide ${background} ${className} relative`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -12,6 +12,15 @@ const Slide = ({ children, background = 'bg-white', className = '' }: SlideProps
     >
       <div className="slide-content">
         {children}
+      </div>
+
+      {/* Wordmark in bottom right corner */}
+      <div className="absolute bottom-8 right-8">
+        <img
+          src="/atlas-logo-lime.svg"
+          alt="Atlas Wordmark"
+          className="h-8 w-auto opacity-50"
+        />
       </div>
     </motion.div>
   );
