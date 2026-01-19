@@ -16,17 +16,6 @@ const SlidesDeck = ({ slides }: SlidesDeckProps) => {
         </div>
       </AnimatePresence>
 
-      {/* Wordmark logo - bottom right (hidden on first slide) */}
-      {currentSlide !== 0 && (
-        <div className="fixed bottom-20 right-8 z-50 h-8 opacity-60 hover:opacity-100 transition-opacity">
-          <img
-            src="/Journalism_Atlas_wordmark_lockup_black.png"
-            alt="The Independent Journalism Atlas"
-            className="h-full w-auto"
-          />
-        </div>
-      )}
-
       {/* Progress indicator */}
       <div className="fixed bottom-8 left-0 right-0 flex justify-center items-center gap-4 px-8 z-50">
         <div className="flex gap-2">
