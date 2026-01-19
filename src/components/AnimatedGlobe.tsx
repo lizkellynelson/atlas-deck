@@ -24,7 +24,7 @@ const AnimatedGlobe = () => {
         }}
       >
         <img
-          src="/Journalism_Atlas_icon_green_transparent.png"
+          src="/Journalism_Atlas_logo_acid_green.png"
           alt="Atlas Logo"
           className="w-full h-full"
         />
