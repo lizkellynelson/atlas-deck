@@ -16,29 +16,19 @@ const AnimatedGlobe = () => {
 
   return (
     <div className="relative w-full max-w-md mx-auto aspect-square">
-      {/* Spinning Atlas Logo - rotating on Y axis like a real globe */}
-      <motion.div
+      {/* Static Atlas Logo */}
+      <div
         className="absolute inset-0"
-        animate={{
-          rotateY: 360,
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
         style={{
           filter: 'drop-shadow(0 0 20px rgba(206, 255, 0, 0.3))',
-          transformStyle: 'preserve-3d',
         }}
       >
         <img
           src="/Journalism_Atlas_icon_green_transparent.png"
           alt="Atlas Logo"
           className="w-full h-full"
-          style={{ backfaceVisibility: 'visible' }}
         />
-      </motion.div>
+      </div>
 
       {/* Twinkling nodes overlay */}
       <svg
