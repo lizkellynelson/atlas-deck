@@ -17,7 +17,7 @@ const Slide = ({ children, background = 'bg-white', className = '' }: SlideProps
       {/* Wordmark in bottom right corner */}
       <div className="absolute bottom-8 right-8">
         <img
-          src="/atlas-logo-lime.svg"
+          src="/Journalism_Atlas_wordmark_lockup_black.png"
           alt="Atlas Wordmark"
           className="h-8 w-auto opacity-50"
         />
